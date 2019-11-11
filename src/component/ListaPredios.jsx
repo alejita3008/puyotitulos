@@ -14,6 +14,7 @@ class ListaPredios extends React.Component {
                                 <th scope="col">Catastro</th>
                                 <th scope="col">Parroquia</th>
                                 <th scope="col">Dirección</th>
+                                <th scope="col">Total Deuda</th>
                                 <th>Ver</th>
                             </tr>
                         </thead>
@@ -23,6 +24,7 @@ class ListaPredios extends React.Component {
                                     <td>{d.ccatastro}</td>
                                     <td>{d.parroquia}</td>
                                     <td>{d.direccion}</td>
+                                    <td>{d.total}</td>
                                     <td><Link to={`titulos?${d.ccatastro}`}>Ver</Link> </td>
                                 </tr>
                             ))}
