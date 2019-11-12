@@ -6,15 +6,15 @@ class ListaPredios extends React.Component {
     render() {
         const { data } = this.props;
         return (
-            <div className="row">
-                <div className="col-6 offset-3">
+            <div className="row" style={{marginTop: '20px'}}>
+                <div className="col-12 col-md-10 col-sm-3 offset-0">
                     <table className="table">
                         <thead>
                             <tr>
-                                <th scope="col">Catastro</th>
-                                <th scope="col">Parroquia</th>
-                                <th scope="col">Dirección</th>
-                                <th scope="col">Total Deuda</th>
+                                <th scope="col-3">Catastro</th>
+                                <th scope="col-3">Parroquia</th>
+                                <th scope="col-3">Dirección</th>
+                                <th scope="col-3">Total Deuda</th>
                                 <th>Ver</th>
                             </tr>
                         </thead>

@@ -1,7 +1,13 @@
 import React from "react";
 import axios from "axios";
 import Search from "../component/Search";
+import ReCAPTCHA from "react-google-recaptcha";
 import ListaPredios from '../component/ListaPredios'
+
+function onChange(value) {
+  console.log("Captcha value:", value);
+}
+
 
 
 class Consulta extends React.Component {
@@ -59,7 +65,7 @@ class Consulta extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 col-md-12 col-sm-12">
           <Search
             lavel={this.state.lavel}
             tipo={this.state.tipo}
@@ -70,7 +76,7 @@ class Consulta extends React.Component {
           />
         </div>
 
-        <div className="col-6 offset-3">
+        <div className="col-12 col-md-12 col-sm-3 offset-1">
           <ListaPredios data={this.state.data} />
         </div>
       </div>

@@ -24,9 +24,9 @@ class Consulta extends React.Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row" >
                 {this.state.data.map(t =>( 
-                <div className="col-12 col-sm-6 col-lg-4">
+                <div className="col-10 offset-1" style={{marginTop: '20px'}}>
                     <Titulos titulo = {t}/>
                 </div>
                 ))}

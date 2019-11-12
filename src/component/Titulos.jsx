@@ -27,32 +27,34 @@ class Titulos extends React.Component {
                     <div className="card-header">Titulo: {titulo.ctitulo}</div>
                     <div className="card-body">
                         <div className="row">
-                            <div className="col-12 col-md-6"> Año: {titulo.anio}</div>
-                            <div className="col-12 col-md-6"> Tipo de Saldo: {titulo.ctiposaldo}</div>
-                        </div>
-                        <div className="row">
-                            <div className="col-12 col-md-6">Total: {titulo.total}</div>
-                            <div className="col-12 col-md-6">Fecha de cobro: {titulo.fecha.substr(0,10)}</div>
+                            <div className="col-12 col-md-3 col-sm-12"> Año: {titulo.anio}</div>
+                            <div className="col-12 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo}</div>
+                            <div className="col-12 col-md-3 col-sm-12">Total: {titulo.total}</div>
+                            <div className="col-12 col-md-3 col-sm-12">Fecha de cobro: {titulo.fecha.substr(0, 10)}</div>
                         </div>
                     </div>
-                    <div className="card-footer">
+                    <div className="card-footer" style={{ textAlign: 'right' }}>
                         <MDBBtn
                             color="primary"
                             onClick={this.toggleCollapse("basicCollapse")}
                             style={{ marginBottom: "1rem" }}
                         >
-                            Ver detalle
+                            Detalle
                     </MDBBtn>
                         <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
+                            <div className="row">
+                                <div className="col-12 col-md-3 col-sm-12" style={{ textAlign: 'center' }}> Saldo</div>
+                                <div className="col-12 col-md-3 col-sm-12"> Monto</div>
+                                <div className="col-12 col-md-3 col-sm-12"> Descuento</div>
+                                <div className="col-12 col-md-3 col-sm-12"> Total</div>
+                            </div>
                             {titulo.detail.map(det => (
                                 <div className="card-body">
                                     <div className="row">
-                                        <div className="col-12 col-md-6"> Saldo: {det.csaldo}</div>
-                                        <div className="col-12 col-md-6"> Monto: {det.monto}</div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-12 col-md-6">Descuento: {det.descuento}</div>
-                                        <div className="col-12 col-md-6">Total: {det.total}</div>
+                                        <div className="col-12 col-md-3 col-sm-12" style={{ textAlign: 'left' }}>  {det.csaldo}</div>
+                                        <div className="col-12 col-md-3 col-sm-12">  {det.monto}</div>
+                                        <div className="col-12 col-md-3 col-sm-12"> {det.descuento}</div>
+                                        <div className="col-12 col-md-3 col-sm-12"> {det.total}</div>
                                     </div>
                                 </div>
                             ))}
