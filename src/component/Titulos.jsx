@@ -28,9 +28,8 @@ class Titulos extends React.Component {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-12 col-md-3 col-sm-12"> Año: {titulo.anio}</div>
-                            <div className="col-12 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo}</div>
-                            <div className="col-12 col-md-3 col-sm-12">Total: {titulo.total}</div>
-                            <div className="col-12 col-md-3 col-sm-12">Fecha de cobro: {titulo.fecha.substr(0, 10)}</div>
+                            <div className="col-12 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo}</div>                            
+                            <div className="col-12 col-md-3 col-sm-12">Total: {titulo.total}</div>                            
                         </div>
                     </div>
                     <div className="card-footer" style={{ textAlign: 'right' }}>
