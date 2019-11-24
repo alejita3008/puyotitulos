@@ -27,7 +27,16 @@ class ListaPredios extends React.Component {
                                     <td>{d.direccion}</td>
                                     <td>{d.clase}</td>
                                     <td>{d.total}</td>
-                                    <td><Link to={`titulos?${d.ccatastro}`}>Ver</Link> </td>
+                                    <td><Link to={`titulos?${d.ccatastro}`}>
+                                        <button renderAs="button" className={"btn btn-secondary btn-success"}>
+                                            <span>Pagado</span>
+                                        </button>
+                                    </Link></td>
+                                    <td><Link to={`titulos?${d.ccatastro}`}>
+                                        <button renderAs="button" className={"btn btn-secondary btn-danger"}>
+                                            <span>Adeudado</span>
+                                        </button>
+                                    </Link></td>
                                 </tr>
                             ))}
                         </tbody>
