@@ -4,8 +4,9 @@ import { MDBBtn, MDBCollapse } from "mdbreact";
 class Titulos extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-            collapseID: ""
+            collapseID: "",sum:0
         }
     }
 
@@ -61,6 +62,7 @@ class Titulos extends React.Component {
 
                     </div>
                 </div>
+            
             </div>
         )
     }

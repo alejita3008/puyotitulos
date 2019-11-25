@@ -14,9 +14,8 @@ class ListaPredios extends React.Component {
                                 <th scope="col-3">Catastro</th>
                                 <th scope="col-3">Parroquia</th>
                                 <th scope="col-3">Dirección</th>
-                                <th scope="col-3">Clase</th>
-                                <th scope="col-3">Total Deuda</th>
-                                <th>Ver</th>
+                                <th scope="col-3">Clase</th>                                
+                                <th></th><th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,8 +25,7 @@ class ListaPredios extends React.Component {
                                     <td>{d.parroquia}</td>
                                     <td>{d.direccion}</td>
                                     <td>{d.clase}</td>
-                                    <td>{d.total}</td>
-                                    <td><Link to={`titulos?${d.ccatastro}`}>
+                                    <td><Link to={`titulosp?${d.ccatastro}`}>
                                         <button renderAs="button" className={"btn btn-secondary btn-success"}>
                                             <span>Pagado</span>
                                         </button>
@@ -42,6 +40,7 @@ class ListaPredios extends React.Component {
                         </tbody>
                     </table>
                 </div>
+                <div className="col=6"></div>
             </div>
 
         )
