@@ -76,7 +76,7 @@ class Consulta extends React.Component {
           />
         </div>
 
-        <div className="col-11 col-md-11 col-sm-3 offset-1">
+        <div className="col-12 col-md-12 col-sm-3 offset-1">
           <ListaPredios data={this.state.data} />
         </div>
       </div>

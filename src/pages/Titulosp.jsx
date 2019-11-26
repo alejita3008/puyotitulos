@@ -19,12 +19,9 @@ class Consulta extends React.Component {
      const dataResponse = await axios.get(
         `http://localhost:9000/titulosp/${this.state.search}`
       );
-      let sum=0;
-      dataResponse.data.map(p=>{
-        sum+=p.total;
-    })
+      
     
-    this.setState({ data: dataResponse.data,sum:sum.toFixed(2) });
+    this.setState({ data: dataResponse.data});
 
   }
 
@@ -36,7 +33,7 @@ class Consulta extends React.Component {
                     <Titulos titulo = {t}/>
                 </div>
                 ))}
-    <div className="col-12 offset-3" style={{marginBlockStart: '20px', marginBlockEnd: '20px'}}>TOTAL: {this.state.sum}</div>
+    
             </div>
         );
     }
