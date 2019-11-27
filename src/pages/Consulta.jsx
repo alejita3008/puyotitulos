@@ -1,14 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Search from "../component/Search";
-import ReCAPTCHA from "react-google-recaptcha";
 import ListaPredios from '../component/ListaPredios'
-
-function onChange(value) {
-  console.log("Captcha value:", value);
-}
-
-
 
 class Consulta extends React.Component {
   constructor(props) {
@@ -17,7 +10,7 @@ class Consulta extends React.Component {
       data: [],
       tipo: 1,
       search: "",
-      lavel: "Cédula o RUC"
+      lavel: "Impuestos"
     };
   }
   componentDidMount() {
@@ -37,9 +30,9 @@ class Consulta extends React.Component {
   htndleTipo = tipo => {
     let lavel = "";
     if (tipo === 1) {
-      lavel = " Cédula o RUC";
+      lavel = " Impuestos";
     } else if (tipo === 2) {
-      lavel = "Clave catastral";
+      lavel = "Patentes";
     }
 
     this.setState({ tipo, lavel });
@@ -54,9 +47,9 @@ class Consulta extends React.Component {
         `http://localhost:9000/predios/${search}`
       );
 
-    } else {
+    } /*else {
       this.props.history.push(`/titulos?${search}`);
-    }
+    }*/
     console.log(dataResponse.data);
     this.setState({ data: dataResponse.data });
 

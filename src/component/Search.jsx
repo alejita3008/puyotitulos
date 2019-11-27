@@ -38,14 +38,14 @@ const Search = ({
           }`}
           onClick={() => htndleTipo(1)}
         >
-          Cédula o RUC
+          Impuestos
         </button>
         <button
           type="button"
           className={`btn btn-secondary  ${tipo === 2 ? "btn-success" : ""}`}
           onClick={() => htndleTipo(2)}
         >
-          Clave catastral
+          Patentes
         </button>
         
       </div>
