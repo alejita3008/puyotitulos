@@ -3,6 +3,7 @@ import axios from "axios";
 import Search from "../component/Search";
 import ListaPredios from '../component/ListaPredios'
 import ReCAPTCHA from "react-google-recaptcha";
+import ListaPatentes from "../component/ListaPatentes";
 
 class Consulta extends React.Component {
   constructor(props) {
@@ -42,18 +43,27 @@ class Consulta extends React.Component {
   handleSearch = async (search) => {
     localStorage.setItem('search', search);
     let dataResponse = [];
+
+    const data ={
+      propietarioID: search,
+      recapcha: this.state.recaptcha
+    };
     if (this.state.tipo == 1) {
-      const data ={
+      /*const data ={
         propietarioID: search,
         recapcha: this.state.recaptcha
-      };
+      };*/
       dataResponse = await axios.post(
         `http://localhost:9000/predios`,data
       );
 
-    } /*else {
-      this.props.history.push(`/titulos?${search}`);
-    }*/
+    } else {
+      //this.props.history.push(`/titulos?${search}`);
+     
+      dataResponse = await axios.post(
+        `http://localhost:9000/patentes`,data
+      );
+    }
     this.setState({ data: dataResponse.data });
 
   }
@@ -78,7 +88,8 @@ class Consulta extends React.Component {
         </div>
 
         <div className="col-11 col-md-11 col-sm-3 offset-1">
-          <ListaPredios data={this.state.data} />
+{this.state.tipo==1 ?(<ListaPredios data={this.state.data} />):(<ListaPatentes data={this.state.data} />)}
+          
         </div>
       </div>
     );
