@@ -23,12 +23,12 @@ class ListaPatentes extends React.Component {
                                     <td>{d.cpatente}</td>
                                     <td>{d.actividad}</td>
                                     <td>{d.direccion}</td>
-                                    <td><Link to={`titulospat?${d.cpropietario}`}>
+                                    <td><Link to={`titulospat?propietario=${d.cpropietario}&actID=${d.cactividad}`}>
                                         <button renderAs="button" className={"btn btn-secondary btn-success"}>
                                             <span>Pagado</span>
                                         </button>
                                     </Link></td>
-                                    <td><Link to={`titulospata?${d.cpropietario}`}>
+                                    <td><Link to={`titulospata?propietario=${d.cpropietario}&actID=${d.cactividad}`}>
                                         <button renderAs="button" className={"btn btn-secondary btn-danger"}>
                                             <span>Adeudado</span>
                                         </button>

@@ -84,7 +84,10 @@ class Consulta extends React.Component {
             valueSearch={this.valueSearch}
             handleSearch={this.handleSearch}
           />
+          <div className="offset-4" style={{ marginBlockStart: '30px', marginBlockEnd: '30px',
+                 textAlign: 'center'  }}>
           <ReCAPTCHA sitekey="6LdMccUUAAAAAJRTSfBk1aMG5ffmKo9WKMi5qU16" hl="es_ES"  onChange={this.handleRecaptcha} />
+          </div>
         </div>
 
         <div className="col-11 col-md-11 col-sm-3 offset-1">
