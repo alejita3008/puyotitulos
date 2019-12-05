@@ -30,7 +30,8 @@ class Titulospat extends React.Component {
                         <div className="row">
                             <div className="col-4 col-md-4 col-sm-12"> Año: {titulop.anio}</div>
                             <div className="col-4 col-md-4 col-sm-12"> Tipo de Saldo: {titulop.ctiposaldo}</div>
-                            
+                            {titulop.total>0?
+                            (<div className="col-4 col-md-3 col-sm-12"> Total: {titulop.total}</div>):(<div></div>)}
                         </div>
                     </div>
                     <div className="card-footer" style={{ textAlign: 'right' }}>
@@ -46,7 +47,7 @@ class Titulospat extends React.Component {
                                 <div className="col-4 col-md-3 col-sm-12" style={{ textAlign: 'center' }}> Saldo</div>
                                 <div className="col-4 col-md-3 col-sm-12"> Monto</div>
                                 <div className="col-4 col-md-3 col-sm-12"> Descuento</div>
-                                <div className="col-4 col-md-3 col-sm-12"> Total</div>
+                                
                             </div>
                             {titulop.detailp.map(det => (
                                 <div className="card-body">

@@ -3,7 +3,7 @@
 
 import React from "react";
 import axios from "axios";
-import Titulospat from "../component/Titulospata";
+import Titulospat from "../component/Titulospat";
 
 class Consulta extends React.Component {
     constructor(props) {
