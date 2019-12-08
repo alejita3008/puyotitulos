@@ -19,10 +19,10 @@ class Consulta extends React.Component {
   componentDidMount() {
     const search = localStorage.getItem('search');
     console.log(search);
-    if (search != "") {
+    /*if (search != "") {
       this.setState({ search });
       this.handleSearch(search);
-    }
+    }*/
   }
   valueSearch = e => {
     let { search } = this.state;
