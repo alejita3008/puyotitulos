@@ -29,7 +29,7 @@ class Titulos extends React.Component {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-3 col-md-3 col-sm-12"> Año: {titulo.anio}</div>
-                            <div className="col-3 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo}</div>
+                            <div className="col-3 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo=="IPR"? "IMP. PREDIAL":titulo.ctiposaldo}</div>
                             <div className="col-3 col-md-3 col-sm-12">Total: {titulo.total}</div>
                             {titulo.fecha?(<div className="col-3 col-md-3 col-sm-12">Fecha: {titulo.fecha.substr(0,10)}</div>):(<div></div>)}
                         </div>
