@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import axios from "axios";
 import Titulospat from "../component/Titulospat";
@@ -21,8 +18,10 @@ class Consulta extends React.Component {
     handleSearch = async () => {
         const dataResponse = await axios.get(
             `http://localhost:9000/titulospat?${this.state.search}`
-        )
-        this.setState({data:dataResponse.data})        
+        );
+        if (dataResponse.data) {
+             this.setState({data:dataResponse.data})        
+        }
     }
 
     render() {
@@ -33,6 +32,13 @@ class Consulta extends React.Component {
                         <Titulospat titulop={t} />
                     </div>
                 ))}
+
+{this.state.data.length>0 ?                    
+                     (<div></div>):(<div className="col-10 offset-1"
+                     style={{
+                         marginBlockStart: '30px', marginBlockEnd: '30px',
+                         textAlign: 'center', backgroundColor: 'lightgrey'
+                     }}>NO HAY TITULOS</div>)}
                
             </div>
         );

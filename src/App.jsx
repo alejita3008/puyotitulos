@@ -1,22 +1,25 @@
 import React from "react";
 import Consulta from "./pages/Consulta";
-import Home from "./pages/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Titulos from "./pages/Titulos";
 import Titulosp from "./pages/Titulosp";
 import Titulospat from "./pages/Titulospat";
 import Titulospata from "./pages/Titulospata";
+import Page404 from "./pages/Page404";
 import "./App.css";
 
 function App() {
 
   return (
     <Router>
+      <Switch>
       <Route exact path='/' component={Consulta} />      
-      <Route path='/titulos' component={Titulos} />
-      <Route path='/titulosp' component={Titulosp} />
-      <Route path='/titulospat' component={Titulospat} />
-      <Route path='/titulospata' component={Titulospata} />
+      <Route exact path='/titulos' component={Titulos} />
+      <Route exact path='/titulosp' component={Titulosp} />
+      <Route exact path='/titulospat' component={Titulospat} />
+      <Route exact path='/titulospata' component={Titulospata} />
+      <Route component={Page404} />
+      </Switch>
     </Router>);
 }
 

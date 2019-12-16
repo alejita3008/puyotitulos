@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import axios from "axios";
 import Titulospat from "../component/Titulospat";
@@ -21,8 +18,15 @@ class Consulta extends React.Component {
     handleSearch = async () => {
         const dataResponse = await axios.get(
             `http://localhost:9000/titulospata?${this.state.search}`
-        )
-        this.setState({data:dataResponse.data})        
+        );
+        let sum = 0;
+        if (dataResponse.data) {
+            dataResponse.data.map(p => {
+                sum += p.total;
+            })
+
+            this.setState({ data: dataResponse.data, sum: sum.toFixed(2) });
+        }       
     }
 
     render() {
@@ -33,7 +37,11 @@ class Consulta extends React.Component {
                         <Titulospat titulop={t} />
                     </div>
                 ))}
-               
+                <div className="col-10 offset-1"
+                    style={{
+                        marginBlockStart: '30px', marginBlockEnd: '30px',
+                        textAlign: 'center', backgroundColor: 'lightgrey'
+                    }}>TOTAL: {this.state.sum ? this.state.sum : 0}</div>
             </div>
         );
     }

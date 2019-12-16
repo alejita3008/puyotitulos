@@ -17,7 +17,7 @@ class Consulta extends React.Component {
 
     handleSearch = async () => {
         const dataResponse = await axios.get(
-            `http://172.18.2.3:9000/titulosp/${this.state.search}`
+            `http://localhost:9000/titulosp/${this.state.search}`
         );
 
         if (dataResponse.data) {
@@ -35,12 +35,12 @@ class Consulta extends React.Component {
                     </div>
                 ))}
 
-                {this.state.data ?                    
-                     (<div> </div>):<div className="col-10 offset-1"
+                {this.state.data.length>0 ?                    
+                     (<div></div>):(<div className="col-10 offset-1"
                      style={{
                          marginBlockStart: '30px', marginBlockEnd: '30px',
                          textAlign: 'center', backgroundColor: 'lightgrey'
-                     }}>NO HAY TITULOS</div>}
+                     }}>NO HAY TITULOS</div>)}
 
             </div>
 

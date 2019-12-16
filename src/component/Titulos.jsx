@@ -4,10 +4,7 @@ import { MDBBtn, MDBCollapse } from "mdbreact";
 class Titulos extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            collapseID: "", sum: 0
-        }
+        this.state = { collapseID: "", sum: 0 }
     }
 
     toggleCollapse = collapseID => () => {
@@ -29,9 +26,9 @@ class Titulos extends React.Component {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-3 col-md-3 col-sm-12"> Año: {titulo.anio}</div>
-                            <div className="col-3 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo=="IPR"? "IMP. PREDIAL":titulo.ctiposaldo}</div>
+                            <div className="col-3 col-md-3 col-sm-12"> Tipo de Saldo: {titulo.ctiposaldo==="IPR"? "IMP. PREDIAL":titulo.ctiposaldo}</div>
                             <div className="col-3 col-md-3 col-sm-12">Total: {titulo.total}</div>
-                            {titulo.fecha?(<div className="col-3 col-md-3 col-sm-12">Fecha: {titulo.fecha.substr(0,10)}</div>):(<div></div>)}
+                            {titulo.fecha?(<div className="col-3 col-md-3 col-sm-12">Fecha pago: {titulo.fecha.substr(0,10)}</div>):(<div></div>)}
                         </div>
                     </div>
                     <div className="card-footer" style={{ textAlign: 'right' }}>
@@ -52,9 +49,7 @@ class Titulos extends React.Component {
                                 <div className="card-body">
                                     <div className="row">
                                         <div className="col-4 col-md-3 col-sm-12" style={{ textAlign: 'left' }}>  {det.csaldo}</div>
-
-
-                                        {det.esdeduccion == 0 ? 
+                                        {det.esdeduccion === 0 ? 
                                         (<div className="col-4 col-md-3 col-sm-12">  {det.monto}</div>) 
                                         : (<div className="offset-4 col-4 col-md-3 col-sm-12">  {det.monto}</div>)}
                                         
