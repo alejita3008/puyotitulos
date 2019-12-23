@@ -51,7 +51,7 @@ class Home extends React.Component {
     let dataResponse = [];
     if (this.state.tipo == 1) {
       dataResponse = await axios.get(
-        `http://localhost:9000/predios/${search}`
+        `http://172.18.1.162:9000/predios/${search}`
       );
 
     } else {

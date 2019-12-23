@@ -17,7 +17,7 @@ class Consulta extends React.Component {
 
     handleSearch = async () => {
         const dataResponse = await axios.get(
-            `http://localhost:9000/titulospat?${this.state.search}`
+            `http://172.18.1.162:9000/titulospat?${this.state.search}`
         );
         if (dataResponse.data) {
              this.setState({data:dataResponse.data})        

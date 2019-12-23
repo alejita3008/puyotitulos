@@ -47,7 +47,7 @@ const Search = ({
         </button>
           <button
             type="button"
-            className={`btn btn-primary  ${tipo === 3 ? "btn-success" : ""}`}
+            className={`btn btn-secondary  ${tipo === 3 ? "btn-success" : ""}`}
             onClick={() => htndleTipo(3)}
           >
             Limpiar
