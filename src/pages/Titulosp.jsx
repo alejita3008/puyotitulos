@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Titulos from "../component/Titulos";
+import { Link } from 'react-router-dom';
+
 class Consulta extends React.Component {
     constructor(props) {
         super(props);
@@ -29,6 +31,12 @@ class Consulta extends React.Component {
     render() {
         return (
             <div className="row" >
+                <div className="col-10 offset-1"
+                    style={{ marginBlockStart: '10px', textAlign: 'center' }}>
+                    <Link to={`home`}>
+                        <span>Volver</span>
+                    </Link>
+                </div>
                 {this.state.data.map(t => (
                     <div className="col-10 offset-1" style={{ marginTop: '20px' }}>
                         <Titulos titulo={t} />
