@@ -13,7 +13,7 @@ class Consulta extends React.Component {
       tipo: 1,
       num: 1,
       search: "",
-      lavel: "Impuestos"
+      lavel: "Cedula o Ruc"
     };
     this.handleKey = this.handleKey.bind(this)
   }
@@ -37,10 +37,10 @@ class Consulta extends React.Component {
     let lavel = "";
     if (tipo === 1) {
       this.setState({ data: [] })
-      lavel = " Impuestos";
+      lavel = "Cedula o Ruc";
     } else if (tipo === 2) {
       this.setState({ data: [] })
-      lavel = "Patentes";
+      lavel = "Cedula o Ruc";
     } else {
       this.setState({ search: "", data: [] })
     }
