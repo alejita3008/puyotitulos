@@ -137,7 +137,7 @@ class Consulta extends React.Component {
           {this.state.tipo === 1 ? (<ListaPredios data={this.state.data} />) : (<ListaPatentes data={this.state.data} />)}
 
         </div>
-        {/*
+        
         <div className="col-2 col-md-2 col-sm-3">
           <div className="btn-group" role="group" aria-label="First">
             <button type="button" className={`btn-lg btn-warning `} id="1" onClick={this.handleKey}>
@@ -181,7 +181,7 @@ class Consulta extends React.Component {
               Borrar
           </button>
           </div>
-        </div>*/}
+        </div>
       </div>
     );
   }

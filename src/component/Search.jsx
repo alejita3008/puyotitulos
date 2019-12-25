@@ -11,7 +11,7 @@ const Search = ({
       <div className="col-4 offset-4">
         <div className="input-group mb-">
           <input
-            type="number"
+            type="text"
             className="form-control"
             placeholder={lavel}
             value={search}
