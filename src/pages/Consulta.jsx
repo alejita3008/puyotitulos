@@ -16,14 +16,26 @@ class Consulta extends React.Component {
       lavel: "Cedula o Ruc"
     };
     this.handleKey = this.handleKey.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   componentDidMount() {
     const search = localStorage.getItem('search');
-    console.log(search);
+    let tipo = localStorage.getItem('tipo');
+    console.log(tipo);
+    if(tipo == undefined){
+      tipo=1;
+    }
     if (search !== "") {
-      this.setState({ search });
-      this.handleSearch(search);
+      this.setState({ search, tipo });
+      
+      setTimeout(() => {
+        this.handleSearch(search);
+      }, 500);
+
+    }
+    else{
+      this.setState({tipo:1})
     }
   }
 
@@ -38,25 +50,31 @@ class Consulta extends React.Component {
     if (tipo === 1) {
       this.setState({ data: [] })
       lavel = "Cedula o Ruc";
+      this.setState({ tipo, lavel });
     } else if (tipo === 2) {
       this.setState({ data: [] })
       lavel = "Cedula o Ruc";
+      this.setState({ tipo, lavel });
     } else {
-      this.setState({ search: "", data: [] })
+      lavel = "Cedula o Ruc";
+      this.setState({ search: "", data: [], tipo:1, lavel })
+      
     }
 
-    this.setState({ tipo, lavel });
+    
   };
 
   handleSearch = async (search) => {
+    console.log(search);
     localStorage.setItem('search', search);
+    localStorage.setItem('tipo', this.state.tipo);
     let dataResponse = [];
 
     const data = {
       propietarioID: search,
       recapcha: this.state.recaptcha
     };
-    if (this.state.tipo === 1) {
+    if (this.state.tipo == 1) {
       dataResponse = await axios.post(
         `http://172.18.1.162:9000/predios`, data
       );
@@ -134,7 +152,7 @@ class Consulta extends React.Component {
         </div>
 
         <div className="col-9 col-md-9 col-sm-3 offset-1">
-          {this.state.tipo === 1 ? (<ListaPredios data={this.state.data} />) : (<ListaPatentes data={this.state.data} />)}
+          {this.state.tipo == 1 ? (<ListaPredios data={this.state.data} />) : (<ListaPatentes data={this.state.data} />)}
 
         </div>
         
