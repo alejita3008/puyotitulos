@@ -8,6 +8,12 @@ class ListaPredios extends React.Component {
         return (
             <div className="row" style={{marginTop: '20px'}}>
                 <div className="col-10 col-md-10 col-sm-3 offset-0">
+                <div style={{
+                        marginBlockStart: '10px', marginBlockEnd: '10px',
+                        textAlign: 'center', backgroundColor: 'lightgrey'
+                    }}>
+                    {data.map(d => (d.nombre))[0]}
+                    </div>
                     <table className="table">
                         <thead>
                             <tr>
