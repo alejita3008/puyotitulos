@@ -34,17 +34,17 @@ class Consulta extends React.Component {
         return (
             <div className="row" >
                 <div className="col-10 offset-1"
-                    style={{ marginBlockStart: '11px', textAlign: 'center' }}>
+                    style={{ marginBlockStart: '10px', textAlign: 'center' }}>
                     <Link to={`home`}>
                         <span>Volver</span>
                     </Link>
                 </div>
                 {this.state.data.map(t => (
-                    <div className="col-11 offset-1" style={{ marginTop: '20px' }}>
+                    <div className="col-10 offset-1" style={{ marginTop: '20px' }}>
                         <Titulospat titulop={t} />
                     </div>
                 ))}
-                <div className="col-11 offset-1"
+                <div className="col-10 offset-1"
                     style={{
                         marginBlockStart: '30px', marginBlockEnd: '30px',
                         textAlign: 'center', backgroundColor: 'lightgrey'
