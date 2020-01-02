@@ -31,12 +31,12 @@ class ListaPredios extends React.Component {
                                     <td>{d.parroquia}</td>
                                     <td>{d.direccion}</td>
                                     <td>{d.clase}</td>
-                                    <td><Link to={`titulosp?${d.ccatastro}`}>
+                                    <td><Link to={`titulosp?predioID=${d.ccatastro}&propietario=${d.identificacion}`}>
                                         <button renderAs="button" className={"btn btn-secondary btn-success"}>
                                             <span>Pagado</span>
                                         </button>
                                     </Link></td>
-                                    <td><Link to={`titulos?${d.ccatastro}`}>
+                                    <td><Link to={`titulos?predioID=${d.ccatastro}&propietario=${d.identificacion}`}>
                                         <button renderAs="button" className={"btn btn-secondary btn-danger"}>
                                             <span>Adeudado</span>
                                         </button>

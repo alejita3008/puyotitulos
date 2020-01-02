@@ -19,7 +19,7 @@ class Consulta extends React.Component {
 
     handleSearch = async () => {
         const dataResponse = await axios.get(
-            `http://consulta-predio.puyo.gob.ec:9000/titulosp/${this.state.search}`
+            `http://consulta-predio.puyo.gob.ec:9000/titulosp?${this.state.search}`
         );
 
         if (dataResponse.data) {
